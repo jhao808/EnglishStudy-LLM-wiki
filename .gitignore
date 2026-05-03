@@ -2,8 +2,8 @@
 **/.DS_Store
 
 # Obsidian workspace state
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
+.obsidian/
+!.obsidian/README.md
 
 # Local caches
 .cache/
