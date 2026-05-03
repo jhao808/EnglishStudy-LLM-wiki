@@ -1,15 +1,15 @@
 # EnglishStudy LLM Wiki
 
-这是一个面向 **中高级英语学习者** 的 **agent-based 个人英文知识库系统**。它参考 Karpathy 的 LLM Wiki 理念：把零散英文材料先放入 `raw/`，再由 Agent 持续阅读、提炼、编译成结构化、可复习、可输出的 `wiki/` 知识层。
+这是一个由 Agent 持续维护的个人英文学习 Wiki 系统。它参考 Karpathy 的 LLM Wiki 理念：把零散英文材料放入 `raw/`，再通过 ingest、query、lint 和 review 工作流，将其编译成结构化、可检索、可复习、可输出的 `wiki/` 学习知识层。
 
-这个项目不只是一个静态 Obsidian vault，而是一套由 Agent 驱动的个人学习系统：Agent 负责 ingest、query、lint 和复习生成，Obsidian 主要作为人工浏览、编辑和回顾的界面。
+这个项目不只是一个静态 Obsidian vault。它的核心是 Agent 维护工作流：Agent 负责阅读材料、提炼表达、更新 wiki、检索知识和生成复习；Obsidian 主要作为人工浏览、编辑和回顾的界面。
 
 本系统的重点不是积累孤立单词，而是沉淀 **主题表达、短语搭配、句子级表达、日常口语表达和写作迁移素材**。
 
 ## 核心理念
 
 - `raw/` 是英文学习材料收件箱与归档层，保存原始材料。
-- `wiki/` 是 Agent 编译后的学习知识层，供 Agent 检索、推理、复习生成，也供人通过 Obsidian 浏览和编辑。
+- `wiki/` 是 Agent 编译后的学习知识层，供 Agent 检索、推理和生成复习，也供人通过 Obsidian 浏览和编辑。
 - 每个 raw 材料 ingest 后主要生成一个 source 总结页，而不是拆成大量碎片词条。
 - 高价值表达会继续汇总到主题 `vocabulary/` 和场景 `expressions/` 页面。
 - `review/` 用于按时间生成复习题，例如“复习本周内容”。
@@ -97,7 +97,7 @@ raw/09-archive/YYYY-MM-DD/<原目录>/<文件名>
 
 ## 适用对象
 
-这个 agent-based 个人英文知识库系统适合已经具备中高级英文基础、希望继续积累自然表达的学习者，尤其适合：
+这个由 Agent 持续维护的个人英文学习 Wiki 系统适合已经具备中高级英文基础、希望继续积累自然表达的学习者，尤其适合：
 
 - IELTS 7 左右学习者
 - 想提升日常口语自然度的人
