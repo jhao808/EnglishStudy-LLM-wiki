@@ -1,6 +1,6 @@
 ---
 name: ingest
-description: 将 raw/01-articles 与 raw/03-transcripts 中的英文学习材料编译为 EnglishStudy Wiki。每个 raw 材料主要生成一个结构化 source 总结页，并把高价值主题表达汇总到 vocabulary/ 与 expressions/。成功处理后将源文件整体移动到 raw/09-archive/YYYY-MM-DD/<原子目录>/，避免重复扫描；绝不修改原文内容。
+description: 将 raw/01-articles 与 raw/02-transcripts 中的英文学习材料编译为 EnglishStudy Wiki。每个 raw 材料主要生成一个结构化 source 总结页，并把高价值主题表达汇总到 vocabulary/ 与 expressions/。成功处理后将源文件整体移动到 raw/09-archive/YYYY-MM-DD/<原子目录>/，避免重复扫描；绝不修改原文内容。
 user-invocable: true
 ---
 
@@ -16,7 +16,7 @@ ingest 的主要产物不是大量孤立词条页，而是：
 
 ## 目录约定
 - `raw/01-articles/` — 英文文章、网页剪藏、阅读材料、课程文字材料。
-- `raw/03-transcripts/` — 视频、播客、演讲、口语材料转写稿。
+- `raw/02-transcripts/` — 视频、播客、演讲、口语材料转写稿。
 - `raw/09-archive/YYYY-MM-DD/<原子目录>/` — 已成功 ingest 的源文件归档区，默认不扫描。
 - `wiki/sources/` — 每个 raw 材料对应一个 source 总结页。
 - `wiki/vocabulary/` — 按主题汇总表达，例如 `technology.md`、`education.md`、`work.md`、`daily-life.md`。
@@ -25,14 +25,14 @@ ingest 的主要产物不是大量孤立词条页，而是：
 - `wiki/syntheses/` — 跨材料主题总结或学习路线。
 
 ## 触发逻辑
-1. 用户执行 `/ingest`：扫描 `raw/01-articles/` 与 `raw/03-transcripts/` 下未归档的学习材料，跳过隐藏文件、系统文件和明显非文本文件。
+1. 用户执行 `/ingest`：扫描 `raw/01-articles/` 与 `raw/02-transcripts/` 下未归档的学习材料，跳过隐藏文件、系统文件和明显非文本文件。
 2. 用户执行 `/ingest <path>`：仅处理指定 raw 文件；如果路径位于 `raw/09-archive/`，必须确认这是用户明确指定的重读/重建请求。
 3. 用户说“摄入”“导入”“收入资料”“加入知识库”等，也触发本技能。
 
 ## 硬约束
 - 禁止修改、覆盖或删除 `raw/` 下任何原始文件内容。
 - 允许且必须在成功 ingest 后将源文件整体移动到 `raw/09-archive/YYYY-MM-DD/<原子目录>/`。
-- 归档移动必须保留原 raw 子目录结构。例如 `raw/03-transcripts/a.md` 归档为 `raw/09-archive/2026-05-03/03-transcripts/a.md`。
+- 归档移动必须保留原 raw 子目录结构。例如 `raw/02-transcripts/a.md` 归档为 `raw/09-archive/2026-05-03/02-transcripts/a.md`。
 - 归档移动必须发生在 source 页、vocabulary/expressions 汇总页、`index.md` 与 `log.md` 全部更新成功之后。
 - `/ingest` 默认只扫描 `raw/09-archive/` 之外的待处理文件；archive 内文件只有用户明确指定时才读取。
 - 所有解释、总结和学习说明使用简体中文；英语表达、例句、测试题保留英文。
@@ -43,7 +43,7 @@ ingest 的主要产物不是大量孤立词条页，而是：
 
 ### 步骤 1：定位材料
 - `/ingest <path>`：读取指定文件。
-- `/ingest`：只扫描 `raw/01-articles/` 与 `raw/03-transcripts/`，排除 `.DS_Store`、隐藏文件和无法提取文本的二进制文件。
+- `/ingest`：只扫描 `raw/01-articles/` 与 `raw/02-transcripts/`，排除 `.DS_Store`、隐藏文件和无法提取文本的二进制文件。
 - 文件是否仍在 archive 外就是主要待处理信号。
 - 如果 archive 外文件已在现有 source 页的 `sources:` 中出现，说明上次归档可能失败，应报告并跳过，避免重复 ingest。
 

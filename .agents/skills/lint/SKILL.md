@@ -7,7 +7,7 @@ user-invocable: true
 # lint 技能：EnglishStudy Wiki 健康巡检
 
 ## 核心目标
-检查当前精简架构是否健康：`raw/01-articles` 和 `raw/03-transcripts` 作为待处理输入，`raw/09-archive/YYYY-MM-DD/<原子目录>/` 作为归档，`wiki/` 只保留 sources、vocabulary、expressions、review、syntheses 五类知识输出。
+检查当前精简架构是否健康：`raw/01-articles` 和 `raw/02-transcripts` 作为待处理输入，`raw/09-archive/YYYY-MM-DD/<原子目录>/` 作为归档，`wiki/` 只保留 sources、vocabulary、expressions、review、syntheses 五类知识输出。
 
 ## 触发条件
 - 用户输入 `/lint`、`/scan`、`/health`。
@@ -24,7 +24,7 @@ user-invocable: true
 ### 第 1 步：目录结构检查
 确认只存在以下核心目录：
 - `raw/01-articles/`
-- `raw/03-transcripts/`
+- `raw/02-transcripts/`
 - `raw/09-archive/`
 - `wiki/sources/`
 - `wiki/vocabulary/`

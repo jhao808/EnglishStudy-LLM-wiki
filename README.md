@@ -19,11 +19,11 @@ EnglishStudy/
 ├── assets/                     # 图片、PDF、音视频等媒体资产
 ├── raw/                        # 原始英文学习材料
 │   ├── 01-articles/            # 英文文章、网页剪藏、阅读材料
-│   ├── 03-transcripts/         # 视频、播客、演讲、口语材料转写稿
+│   ├── 02-transcripts/         # 视频、播客、演讲、口语材料转写稿
 │   └── 09-archive/             # 已 ingest 材料归档区
 │       └── YYYY-MM-DD/
 │           ├── 01-articles/
-│           └── 03-transcripts/
+│           └── 02-transcripts/
 ├── wiki/                       # LLM 编译后的知识层
 │   ├── index.md                # 全局索引
 │   ├── log.md                  # ingest/query/lint 操作日志
@@ -46,7 +46,7 @@ EnglishStudy/
 
 ### `/ingest`
 
-扫描 `raw/01-articles/` 和 `raw/03-transcripts/` 中未归档的材料，将其编译为：
+扫描 `raw/01-articles/` 和 `raw/02-transcripts/` 中未归档的材料，将其编译为：
 
 - `wiki/sources/摘要-*.md`
 - 对应主题的 `wiki/vocabulary/*.md`

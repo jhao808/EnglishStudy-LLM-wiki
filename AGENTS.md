@@ -15,16 +15,16 @@
 ```text
 raw/
   01-articles/
-  03-transcripts/
+  02-transcripts/
   09-archive/
     YYYY-MM-DD/
       01-articles/
-      03-transcripts/
+      02-transcripts/
 ```
 
 目录职责：
 - `raw/01-articles/`：英文文章、网页剪藏、阅读材料、课程文字材料。
-- `raw/03-transcripts/`：视频、播客、演讲、口语材料转写稿；适合提取日常口语和听力表达。
+- `raw/02-transcripts/`：视频、播客、演讲、口语材料转写稿；适合提取日常口语和听力表达。
 - `raw/09-archive/YYYY-MM-DD/<原子目录>/`：已成功 ingest 的原始材料归档区，保留原始文件内容和原 raw 子目录结构。
 
 归档规则：
