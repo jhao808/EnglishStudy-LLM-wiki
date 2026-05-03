@@ -1,0 +1,15 @@
+.DS_Store
+**/.DS_Store
+
+# Obsidian workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Local caches
+.cache/
+tmp/
+*.tmp
+
+# OS/editor noise
+Thumbs.db
+.vscode/
