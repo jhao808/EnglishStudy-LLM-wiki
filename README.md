@@ -50,7 +50,7 @@ EnglishStudy/
 
 扫描 `raw/01-articles/` 和 `raw/02-transcripts/` 中未归档的材料，将其编译为：
 
-- `wiki/sources/摘要-*.md`
+- `wiki/sources/summary-*.md`
 - 对应主题的 `wiki/vocabulary/*.md`
 - 对应场景的 `wiki/expressions/*.md`
 
@@ -92,14 +92,14 @@ raw/09-archive/YYYY-MM-DD/<原目录>/<文件名>
 - Source 页是一篇材料的主要学习入口。
 - Vocabulary 页按主题组织，不按单词组织。
 - Expressions 页按输出场景组织，例如日常口语、观点表达、讨论、讲故事、学术写作。
-- 所有 wiki 页面必须保留 `## 关联连接`，使用 Obsidian 双链形成知识网络。
-- 中文负责解释和复盘，英文负责表达、例句和练习。
+- All wiki pages must keep a `## Related Links` section and use Obsidian wikilinks to form a connected knowledge graph.
+- User-facing discussion may happen in Chinese, but all `wiki/` pages should be written in English, including explanations, summaries, examples, review prompts, and answers.
 
 ## 适用对象
 
 这个由 Agent 持续维护的个人英文学习 Wiki 系统适合已经具备中高级英文基础、希望继续积累自然表达的学习者，尤其适合：
 
-- IELTS 7 左右学习者
+- Upper-intermediate to advanced learners, with IELTS 7 as a rough reference point
 - 想提升日常口语自然度的人
 - 想积累主题表达和写作句型的人
 - 想把阅读/听力材料转化为可输出表达的人
