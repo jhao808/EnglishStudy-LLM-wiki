@@ -94,7 +94,14 @@ user-invocable: true
 1. 读取 `wiki/log.md`。
 2. 检查 ingest 记录是否包含 source 链接，例如 `[[summary-*]]`。
 3. 检查 ingest 记录是否包含 review cues。
-4. 如果最近有多次 ingest 但没有 review 页面，只提示“可生成复习”，不判为错误。
+4. 检查 review 页面或 Review Cues 是否以迁移式任务为主，而不是复制 source 原句。
+5. 如果最近有多次 ingest 但没有 review 页面，只提示“可生成复习”，不判为错误。
+
+Review 质量检查标准：
+- 是否包含新场景、新句子、新对话或新写作任务。
+- 是否避免直接复制 raw 原文或 source 页完整例句。
+- 是否覆盖 expression transfer、scenario reframing、expression upgrading、mini-dialogue creation、writing transfer 中至少 3 类。
+- 是否优先考察句子级表达和表达迁移，而不是孤立单词记忆。
 
 ### 第 9 步：Raw 收件箱与归档检查
 1. 扫描 `raw/09-archive/` 之外的 raw 文件，排除隐藏文件和 `.DS_Store`。
@@ -127,6 +134,7 @@ user-invocable: true
 
 ### 红灯项
 - **语言规则违规**：[页面名称] 包含中文解释、中文标题或中文表格字段。
+- **复习题质量问题**：[页面名称] 大量复制原句，缺少新场景或迁移式任务。
 - **死链**：[来源页面] -> [[不存在的目标页面]]
 - **source 结构缺失**：[页面名称] 缺少关键英文模块。
 - **表达库质量问题**：[页面名称] 缺少例句、语境或来源。

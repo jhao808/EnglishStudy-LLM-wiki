@@ -153,7 +153,7 @@ Extract natural, speakable expressions if the material supports spoken English p
 Extract useful expressions for opinions, contrast, concession, examples, and conclusions.
 
 ## Review Cues
-Generate 5-10 future test points, such as phrase recall, sentence completion, expression upgrading, speaking prompts, or writing prompts.
+Generate 5-10 transferable review cues. Each cue should identify an expression or pattern and suggest a new context where it could be reused. Do not copy full source sentences as future questions.
 
 ## Related Links
 - [[topic-page]] — Related topic vocabulary.
@@ -170,7 +170,7 @@ Generate 5-10 future test points, such as phrase recall, sentence completion, ex
 # 工作流指令
 - `/ingest <路径>`：读取指定 raw 材料，生成一个英文结构化 source 总结页，把高价值表达合并到 `vocabulary/` 与 `expressions/`，更新 `index.md` 和 `log.md`，成功后归档源文件。
 - `/query <问题>`：先读取 `wiki/index.md`，再读取相关 source、vocabulary、expressions、review 或 syntheses 页面，综合回答并用 `[[wikilink]]` 标注引用。用户回复用中文，但引用和总结 wiki 内容时不要把英文页面翻译成中文，除非用户明确要求。
-- `/query 复习这周内容`：根据 `wiki/log.md` 的时间范围找到相关 ingest 记录，读取对应 source 页面，生成英文词汇/短语/句子/口语对话/写作 prompt 复习题。
+- `/query 复习这周内容`：根据 `wiki/log.md` 的时间范围找到相关 ingest 记录，读取对应 source 页面，生成英文迁移式复习题。题目必须基于已有表达创造新句子、新场景、新对话或新写作任务，不能直接复制原文。
 - `/lint`：扫描 wiki 与 raw 收件箱健康度，检查死链、孤儿页、index 未同步、知识冲突、归档结构、wiki 是否全英文，以及 EnglishStudy 页面质量。
 
 # 默认学习偏好

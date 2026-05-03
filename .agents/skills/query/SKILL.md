@@ -69,14 +69,52 @@ user-invocable: true
 2. 找到对应时间范围内的 `ingest` 记录。
 3. 从记录中提取 `[[summary-*]]` source 链接。
 4. 读取相关 source 页面。
-5. 生成英文复习题。
+5. 提取核心表达、句子模板、主题场景和 review cues。
+6. 生成英文迁移式复习题。
 
 复习题默认包括：
-- **Phrase recall**：测试理解和输出。
-- **Sentence completion**：测试搭配和语感。
-- **Expression upgrading**：把普通表达升级成更自然表达。
-- **Topic-based mini-dialogue**：围绕近期主题生成日常对话。
-- **Writing prompt**：给一个短写作任务，要求使用近期表达。
+- **Expression Transfer**：给一个新语境，要求使用近期表达完成新句子。
+- **Scenario Reframing**：把原材料中的表达迁移到新的日常、学习、工作或社交场景。
+- **Expression Upgrading**：把普通表达升级成更自然、更中高级的表达。
+- **Mini-Dialogue Creation**：围绕新场景生成或补全自然对话。
+- **Writing Transfer**：给一个新的短写作任务，要求使用近期表达。
+- **Paraphrase and Reuse**：用不同句式重写意思相近但场景不同的新句子。
+
+## 复习题质量标准
+- 复习题必须测试“迁移能力”，不是测试记忆原文。
+- 不要直接复制 raw 原文、source summary 原句或 vocabulary/expression 页面中的完整例句作为题干。
+- 每道题最多可以复用一个短表达或搭配；围绕它生成新的句子、新的人物、新场景或新任务。
+- 如果需要引用原表达，只引用目标短语本身，不要复制整句。
+- 每组题目应覆盖至少 3 种新场景，例如 workplace, casual conversation, study, travel, health, technology, relationships。
+- 答案示例也必须是新写的自然英文句子，不应与 source 页面例句相同。
+- 优先考察句子级表达、collocation、discourse moves 和 spoken responses，而不是孤立单词。
+
+推荐输出结构：
+```markdown
+## Review Practice
+
+### 1. Expression Transfer
+[New situation + task]
+
+### 2. Scenario Reframing
+[New situation + task]
+
+### 3. Expression Upgrading
+[Plain sentence -> upgraded sentence task]
+
+### 4. Mini-Dialogue Creation
+[New dialogue setting + required expressions]
+
+### 5. Writing Transfer
+[New short writing prompt]
+
+## Suggested Answers
+[Fresh model answers written for the new scenarios]
+
+## Source Expressions
+- [[summary-source-a]]
+- [[topic-page]]
+```
 
 如果复习内容有长期价值，询问用户是否保存到：
 - `wiki/review/weekly/weekly-review-YYYY-Www.md`

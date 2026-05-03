@@ -93,7 +93,7 @@ Extract natural, speakable expressions if the material supports spoken English p
 Extract useful expressions for opinions, contrast, concession, examples, and conclusions.
 
 ## Review Cues
-Generate 5-10 future test points, such as phrase recall, sentence completion, expression upgrading, speaking prompts, or writing prompts.
+Generate 5-10 transferable review cues. Each cue should identify an expression or pattern and suggest a new context where it could be reused. Do not copy full source sentences as future questions.
 
 ## Related Links
 - [[topic-page]] — Related topic vocabulary.
@@ -161,4 +161,6 @@ Generate 5-10 future test points, such as phrase recall, sentence completion, ex
 - Source 页应能独立复习一篇材料。
 - Vocabulary 页应像“主题表达库”，而不是单词表。
 - Expressions 页应像“输出工具箱”，而不是短语堆积。
-- Review cues 必须能转化为题目，例如 phrase recall, sentence completion, expression upgrading, speaking prompts, writing prompts.
+- Review cues 必须能转化为迁移式题目，例如 expression transfer, scenario reframing, expression upgrading, mini-dialogue creation, writing transfer.
+- Review cues 不应复制原文整句；只能保留目标表达、用法功能和可迁移的新场景。
+- 每个 source 页的 Review Cues 应尽量包含新场景建议，例如 workplace, casual conversation, study, travel, health, technology, relationships。

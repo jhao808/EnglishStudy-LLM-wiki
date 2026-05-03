@@ -72,11 +72,13 @@ raw/09-archive/YYYY-MM-DD/<原目录>/<文件名>
 
 根据 `wiki/log.md` 找到本周 ingest 的材料，生成复习题，包括：
 
-- 词汇/短语英译中与中译英
-- 句子补全
-- 表达替换
-- 话题口语对话
-- 简短写作 prompt
+- expression transfer into new sentences
+- scenario reframing across daily life, work, study, travel, and social contexts
+- expression upgrading from plain English to more natural English
+- topic-based mini-dialogues in new situations
+- short writing prompts that require recently learned expressions
+
+Review questions should not simply copy original sentences from raw materials. They should reuse learned expressions in fresh contexts so the system tests transfer, not memorization.
 
 ### `/lint`
 
