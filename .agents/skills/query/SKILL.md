@@ -47,11 +47,11 @@ user-invocable: true
 根据问题读取最相关的 source、vocabulary、expressions、review 或 syntheses 页面。
 
 优先级：
-- 主题问题：优先读取 `wiki/vocabulary/{topic}.md`，再读相关 source。
-- 口语问题：优先读取 `wiki/expressions/daily-speaking.md`、`discussion.md`、`storytelling.md`。
+- 主题问题：优先读取 `wiki/vocabulary/{topic}.md`，再读相关 source 的 `Topic Vocabulary`、`Topic Expressions` 和 `Sentence-Level Expressions`。
+- 口语问题：优先读取 `wiki/expressions/daily-speaking.md`、`discussion.md`、`storytelling.md`，再读 transcript source 的 `Everyday Speaking Expressions`。
 - 观点表达：优先读取 `wiki/expressions/opinion-giving.md`。
-- 写作问题：优先读取 `wiki/expressions/academic-writing.md`。
-- 时间复习：先读 `wiki/log.md`，根据日期范围找 ingest 记录，再读对应 source 页。
+- 写作问题：优先读取 `wiki/expressions/academic-writing.md`，再读 article source 的 `Writing-Ready Expressions`。
+- 时间复习：先读 `wiki/log.md`，根据日期范围找 ingest 记录，再读对应 source 页，优先使用 `Sentence-Level Expressions` 中的 original sentence/expression 生成迁移式题目。
 
 ### 步骤 4：生成学习型回答
 回答给用户时可用中文解释任务结论，但核心英文学习内容应保持英文，例如：
@@ -69,11 +69,12 @@ user-invocable: true
 2. 找到对应时间范围内的 `ingest` 记录。
 3. 从记录中优先提取 `[[YYYY-MM-DD-summary-*]]` source 链接；如果遇到历史旧格式 `[[summary-*]]`，也可以兼容读取。
 4. 读取相关 source 页面。
-5. 提取核心表达、句子模板、主题场景和 review cues。
+5. 优先提取 `Sentence-Level Expressions` 中的 original sentence/expression、why it matters、reusable structure 和 transferable scenarios，再提取 topic vocabulary, topic expressions, everyday speaking expressions, writing-ready expressions, and review cues。
 6. 生成英文迁移式复习题。
 
 复习题默认包括：
 - **Expression Transfer**：给一个新语境，要求使用近期表达完成新句子。
+- **Sentence Rebuilding**：给出原文高价值句子的结构或关键词，要求在新话题中重建句子。
 - **Scenario Reframing**：把原材料中的表达迁移到新的日常、学习、工作或社交场景。
 - **Expression Upgrading**：把普通表达升级成更自然、更中高级的表达。
 - **Mini-Dialogue Creation**：围绕新场景生成或补全自然对话。
@@ -87,7 +88,7 @@ user-invocable: true
 - 如果需要引用原表达，只引用目标短语本身，不要复制整句。
 - 每组题目应覆盖至少 3 种新场景，例如 workplace, casual conversation, study, travel, health, technology, relationships。
 - 答案示例也必须是新写的自然英文句子，不应与 source 页面例句相同。
-- 优先考察句子级表达、collocation、discourse moves 和 spoken responses，而不是孤立单词。
+- 优先考察 original sentence/expression 的改写、迁移、补全和场景重构，以及 topic vocabulary in context、collocation、discourse moves 和 spoken responses，而不是孤立单词释义。
 
 推荐输出结构：
 ```markdown

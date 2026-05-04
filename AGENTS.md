@@ -128,29 +128,32 @@ focus: expression
 last_updated: YYYY-MM-DD
 ---
 
-## Material Overview
-Summarize the topic, context, main ideas, and language-learning value of the material in English.
+## Material Snapshot
+Briefly identify the material type, topic, context, speaker or author stance, and language-learning value. Keep this section short; the source page is primarily an expression bank, not a content summary.
 
-## Core Content Summary
-Extract the main arguments, narrative structure, examples, or conversational context.
+## Topic Vocabulary
+Extract advanced topic-specific words, especially analytical, evaluative, abstract, or accuracy-enhancing vocabulary. Avoid basic words unless they form part of a high-value expression.
 
-## Topic Vocabulary and Expressions
-Prioritize phrases, collocations, and sentence-level expressions over isolated words.
+| Word | Part of Speech | Meaning | Source Context | Reusable Example |
+| --- | --- | --- | --- | --- |
 
-| Expression | Meaning | Context | Transferable Example |
+## Topic Expressions
+Extract topic-related phrases, collocations, advanced expressions, and conceptual expressions.
+
+| Expression | Meaning | Use Case | Reusable Example |
 | --- | --- | --- | --- |
 
 ## Sentence-Level Expressions
-Collect natural expressions that can be transferred into speaking or writing.
+This is the most important section. Extract high-value original sentences or sentence-length expressions directly from the raw material, especially topic-rich sentences, long spoken explanations, complex claims, contrast, concession, cause-effect reasoning, evaluation, and summary lines. A reusable structure is helpful but not required; do not reduce this section to short generic patterns.
 
-| Original Expression | Usage Note | Reusable Pattern |
-| --- | --- | --- |
+| Original Sentence / Expression | Why It Matters | Function | Reusable Structure | Transferable Scenarios | Learner Example |
+| --- | --- | --- | --- | --- | --- |
 
 ## Everyday Speaking Expressions
-Extract natural, speakable expressions if the material supports spoken English practice.
+For transcripts, extract short, natural, spoken expressions that are useful in daily conversation, discussion, or speaking tests. For articles, keep this section short or omit low-value items.
 
 ## Writing-Ready Expressions
-Extract useful expressions for opinions, contrast, concession, examples, and conclusions.
+For articles, extract formal expressions for essays, reports, and argumentative writing. For transcripts, include only a small number of transferable opinion or discourse expressions; do not force academic writing from casual speech.
 
 ## Review Cues
 Generate 5-10 transferable review cues. Each cue should identify an expression or pattern and suggest a new context where it could be reused. Do not copy full source sentences as future questions.
@@ -164,8 +167,13 @@ Generate 5-10 transferable review cues. Each cue should identify an expression o
 - `vocabulary/` 不按单词建页，而是按主题建页。
 - `expressions/` 按使用场景建页。
 - 只有高频、跨材料可复用、适合中高级英文学习者输出的表达才汇总到主题或场景页。
-- 优先沉淀短语、搭配、句子级表达和可迁移模板，而不是孤立单词。
+- `vocabulary/` 同时沉淀高级 topic vocabulary 和 topic expressions；不要只收短语，也不要收过于基础的普通词。
+- `expressions/` 主要沉淀 sentence-level expressions、daily speaking expressions、opinion/discussion moves 和 writing-ready expressions；不要混入普通主题词汇。
 - 每条表达必须尽量包含英文释义、适用场景、例句和来源链接。
+- `vocabulary/` 与 `expressions/` 可以包含比 source 页初稿更多的表达，但这些表达必须直接来自对应 raw 原文，或是对 raw 原文表达的明确模板化抽象。
+- 一旦从 raw 中新增表达到 `vocabulary/` 或 `expressions/`，必须同步补回对应 source 页的相关模块；source 页应作为该材料全部可沉淀表达的母版。
+- 禁止只凭模型常识向 `vocabulary/` 或 `expressions/` 添加没有 raw 依据、且未同步到 source 页的表达。
+- article 与 transcript 使用不同提取标准：transcript 优先口语、讨论和自然表达；article 优先正式写作、论证表达和抽象分析词汇。
 
 # 工作流指令
 - `/ingest <路径>`：读取指定 raw 材料，生成一个英文结构化 `YYYY-MM-DD-summary-{source-slug}` source 总结页，把高价值表达合并到 `vocabulary/` 与 `expressions/`，更新 `index.md` 和 `log.md`，成功后归档源文件。

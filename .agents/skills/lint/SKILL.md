@@ -74,9 +74,9 @@ user-invocable: true
 
 ### 第 6 步：Source 页面质量检查
 对 `wiki/sources/YYYY-MM-DD-summary-*.md` 检查是否包含：
-- `## Material Overview`
-- `## Core Content Summary`
-- `## Topic Vocabulary and Expressions`
+- `## Material Snapshot`
+- `## Topic Vocabulary`
+- `## Topic Expressions`
 - `## Sentence-Level Expressions`
 - `## Everyday Speaking Expressions`
 - `## Writing-Ready Expressions`
@@ -85,6 +85,12 @@ user-invocable: true
 
 同时检查 source 页是否链接到至少一个 `vocabulary` 主题页或 `expressions` 场景页。
 
+Source 表达质量检查：
+- `## Topic Vocabulary` 是否包含单词级高级词汇，并包含 part of speech、meaning、source context、reusable example。
+- `## Topic Expressions` 是否包含短语、搭配、高级表达或概念性表达，而不是基础普通词。
+- `## Sentence-Level Expressions` 是否包含 raw 原文中的高价值完整句子或长句表达，并标注 why it matters、function、transferable scenarios；如果大多是短模板、缺少 raw 原句、缺少主题相关高信息密度表达，标记为“sentence-level extraction too generic”。
+- transcript source 应明显强化 `## Everyday Speaking Expressions`；article source 应明显强化 `## Writing-Ready Expressions`。如果两类材料使用完全相同提取标准，标记为“材料类型提取标准错配”。
+
 Source 命名检查：
 - `wiki/sources/summary-*.md` 属于旧格式，应报告为“source 文件名缺少日期”。
 - 新 source 文件名必须符合 `YYYY-MM-DD-summary-{source-slug}.md`。
@@ -92,9 +98,14 @@ Source 命名检查：
 - 如果 `sources:` 指向 `raw/09-archive/YYYY-MM-DD/...`，source 文件名日期应与归档日期一致；若不一致，报告为“source 日期与归档日期不一致”。
 
 ### 第 7 步：Vocabulary 与 Expressions 质量检查
-对 `wiki/vocabulary/*.md` 检查是否包含 topic expressions, sentence-level expressions, examples, source links, and `## Related Links`。
+对 `wiki/vocabulary/*.md` 检查是否包含 topic vocabulary, topic expressions, examples, source links, and `## Related Links`。
 
-对 `wiki/expressions/*.md` 检查是否包含 English expression, meaning, usage context, example or mini-dialogue, source link, and `## Related Links`。
+对 `wiki/expressions/*.md` 检查是否包含 sentence-level expressions, daily speaking expressions, opinion/discussion moves or writing-ready expressions, plus meaning, usage context, example or mini-dialogue, source link, and `## Related Links`。
+
+Source 同步检查：
+- 抽查 `vocabulary/` 与 `expressions/` 中带 source link 的表达，确认对应 source 页的相关模块也包含该表达、短语或明确模板。
+- 如果汇总页中有表达链接到某 source，但该 source 页完全没有对应表达或模板，标记为“汇总表达未同步回 source”。
+- 如果汇总页表达看起来不是来自 raw 原文，也不是 raw 表达的模板化抽象，标记为“表达来源不明”。
 
 ### 第 8 步：Review 与时间复习检查
 1. 读取 `wiki/log.md`。
