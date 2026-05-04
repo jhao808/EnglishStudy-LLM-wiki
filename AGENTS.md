@@ -86,7 +86,7 @@ wiki/
    示例：
    ```markdown
    ## [2026-05-03] ingest | Imported an article about remote work
-   - **Changes**: Added [[summary-remote-work-article]]; updated [[work]], [[daily-speaking]], [[index.md]]
+   - **Changes**: Added [[2026-05-03-summary-remote-work-article]]; updated [[work]], [[daily-speaking]], [[index.md]]
    - **Review cues**: Generated 8 testable expressions for weekly review
    - **Archived**: Moved source file to raw/09-archive/2026-05-03/01-articles/remote-work.md
    - **Conflicts**: None
@@ -114,11 +114,11 @@ wiki/
    如果新知识与旧知识冲突，不要静默覆盖。在相关页面中新建 `## Knowledge Conflicts` 区块，将两种说法都保留并做英文对比。
 
 # Source 页面模板
-每个 raw 材料主要生成一个 `wiki/sources/summary-*.md`：
+每个 raw 材料主要生成一个 `wiki/sources/YYYY-MM-DD-summary-*.md`。日期优先使用归档路径中的日期，例如 `raw/09-archive/2026-05-03/...`；如果尚未归档，则使用 ingest 当天日期。source 文件名、frontmatter `title` 与归档日期必须保持一致。
 
 ```markdown
 ---
-title: "summary-source-slug"
+title: "YYYY-MM-DD-summary-source-slug"
 type: source
 tags: [english-study, topic]
 sources: [raw/09-archive/YYYY-MM-DD/original-folder/file-name]
@@ -168,7 +168,7 @@ Generate 5-10 transferable review cues. Each cue should identify an expression o
 - 每条表达必须尽量包含英文释义、适用场景、例句和来源链接。
 
 # 工作流指令
-- `/ingest <路径>`：读取指定 raw 材料，生成一个英文结构化 source 总结页，把高价值表达合并到 `vocabulary/` 与 `expressions/`，更新 `index.md` 和 `log.md`，成功后归档源文件。
+- `/ingest <路径>`：读取指定 raw 材料，生成一个英文结构化 `YYYY-MM-DD-summary-{source-slug}` source 总结页，把高价值表达合并到 `vocabulary/` 与 `expressions/`，更新 `index.md` 和 `log.md`，成功后归档源文件。
 - `/query <问题>`：先读取 `wiki/index.md`，再读取相关 source、vocabulary、expressions、review 或 syntheses 页面，综合回答并用 `[[wikilink]]` 标注引用。用户回复用中文，但引用和总结 wiki 内容时不要把英文页面翻译成中文，除非用户明确要求。
 - `/query 复习这周内容`：根据 `wiki/log.md` 的时间范围找到相关 ingest 记录，读取对应 source 页面，生成英文迁移式复习题。题目必须基于已有表达创造新句子、新场景、新对话或新写作任务，不能直接复制原文。
 - `/lint`：扫描 wiki 与 raw 收件箱健康度，检查死链、孤儿页、index 未同步、知识冲突、归档结构、wiki 是否全英文，以及 EnglishStudy 页面质量。

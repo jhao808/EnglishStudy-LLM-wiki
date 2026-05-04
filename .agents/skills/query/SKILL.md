@@ -67,7 +67,7 @@ user-invocable: true
 当用户说“复习今天/本周/本月/最近 N 篇材料”时：
 1. 读取 `wiki/log.md`。
 2. 找到对应时间范围内的 `ingest` 记录。
-3. 从记录中提取 `[[summary-*]]` source 链接。
+3. 从记录中优先提取 `[[YYYY-MM-DD-summary-*]]` source 链接；如果遇到历史旧格式 `[[summary-*]]`，也可以兼容读取。
 4. 读取相关 source 页面。
 5. 提取核心表达、句子模板、主题场景和 review cues。
 6. 生成英文迁移式复习题。
@@ -112,7 +112,7 @@ user-invocable: true
 [Fresh model answers written for the new scenarios]
 
 ## Source Expressions
-- [[summary-source-a]]
+- [[YYYY-MM-DD-summary-source-a]]
 - [[topic-page]]
 ```
 

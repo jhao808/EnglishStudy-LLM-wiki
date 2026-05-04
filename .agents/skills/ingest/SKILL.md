@@ -10,7 +10,7 @@ user-invocable: true
 你正在维护一个面向 **中高级英文水平学习者** 的 EnglishStudy LLM Wiki，参考标准约为 IELTS 7。`raw/` 是收件箱与归档层，`wiki/` 是全英文编译输出层。原始文件内容不可变，但文件在成功 ingest 后必须整体移动到 `raw/09-archive/YYYY-MM-DD/<原子目录>/`，避免下次重复扫描。
 
 ingest 的主要产物不是大量孤立词条页，而是：
-- 一个全英文结构化 `wiki/sources/summary-*.md` 材料总结页。
+- 一个全英文结构化 `wiki/sources/YYYY-MM-DD-summary-*.md` 材料总结页。
 - 少量按主题合并的 `wiki/vocabulary/{topic}.md` 页面。
 - 少量按使用场景合并的 `wiki/expressions/{scenario}.md` 页面。
 
@@ -54,11 +54,15 @@ ingest 的主要产物不是大量孤立词条页，而是：
 - 转写稿、写作批改、课程笔记都按文本材料处理；如果这类材料长期增多，再新增 raw 子目录。
 
 ### 步骤 3：生成 source 总结页
-在 `wiki/sources/` 创建或更新 `summary-{source-slug}.md`：
+在 `wiki/sources/` 创建或更新 `YYYY-MM-DD-summary-{source-slug}.md`：
+- `YYYY-MM-DD` 优先使用最终归档路径中的日期，例如 `raw/09-archive/2026-05-03/...`。
+- 如果源文件尚未归档，先按 ingest 当天日期生成目标归档路径，再用同一日期命名 source 页。
+- frontmatter `title` 必须等于不含 `.md` 的 source 文件名。
+- 新 ingest 禁止生成旧格式 `summary-{source-slug}.md`；旧格式只可作为兼容读取对象。
 
 ```markdown
 ---
-title: "summary-source-slug"
+title: "YYYY-MM-DD-summary-source-slug"
 type: source
 tags: [english-study, topic]
 sources: [raw/09-archive/YYYY-MM-DD/original-folder/file-name]
@@ -133,7 +137,7 @@ Generate 5-10 transferable review cues. Each cue should identify an expression o
 追加 `wiki/log.md`，内容必须用英文：
 ```markdown
 ## [YYYY-MM-DD] ingest | Imported <material name>
-- **Changes**: Added/updated [[summary-source-slug]], [[topic]], [[scenario]]; updated [[index.md]]
+- **Changes**: Added/updated [[YYYY-MM-DD-summary-source-slug]], [[topic]], [[scenario]]; updated [[index.md]]
 - **Review cues**: Generated N testable expressions for weekly review
 - **Archived**: Moved source file to raw/09-archive/YYYY-MM-DD/<original-folder>/<file>
 - **Conflicts**: None

@@ -50,9 +50,15 @@ EnglishStudy/
 
 扫描 `raw/01-articles/` 和 `raw/02-transcripts/` 中未归档的材料，将其编译为：
 
-- `wiki/sources/summary-*.md`
+- `wiki/sources/YYYY-MM-DD-summary-*.md`
 - 对应主题的 `wiki/vocabulary/*.md`
 - 对应场景的 `wiki/expressions/*.md`
+
+Source 文件名中的日期优先使用归档日期，例如：
+
+```text
+wiki/sources/2026-05-03-summary-how-to-stop-ai-from-killing-your-critical-thinking-advait-sarkar-ted.md
+```
 
 处理成功后，源文件会移动到：
 

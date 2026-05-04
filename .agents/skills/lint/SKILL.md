@@ -73,7 +73,7 @@ user-invocable: true
 如发现中文解释、中文总结或中文表格字段，标记为“语言规则违规”。
 
 ### 第 6 步：Source 页面质量检查
-对 `wiki/sources/summary-*.md` 检查是否包含：
+对 `wiki/sources/YYYY-MM-DD-summary-*.md` 检查是否包含：
 - `## Material Overview`
 - `## Core Content Summary`
 - `## Topic Vocabulary and Expressions`
@@ -85,6 +85,12 @@ user-invocable: true
 
 同时检查 source 页是否链接到至少一个 `vocabulary` 主题页或 `expressions` 场景页。
 
+Source 命名检查：
+- `wiki/sources/summary-*.md` 属于旧格式，应报告为“source 文件名缺少日期”。
+- 新 source 文件名必须符合 `YYYY-MM-DD-summary-{source-slug}.md`。
+- source 页 frontmatter `title` 必须等于不含 `.md` 的文件名。
+- 如果 `sources:` 指向 `raw/09-archive/YYYY-MM-DD/...`，source 文件名日期应与归档日期一致；若不一致，报告为“source 日期与归档日期不一致”。
+
 ### 第 7 步：Vocabulary 与 Expressions 质量检查
 对 `wiki/vocabulary/*.md` 检查是否包含 topic expressions, sentence-level expressions, examples, source links, and `## Related Links`。
 
@@ -92,7 +98,7 @@ user-invocable: true
 
 ### 第 8 步：Review 与时间复习检查
 1. 读取 `wiki/log.md`。
-2. 检查 ingest 记录是否包含 source 链接，例如 `[[summary-*]]`。
+2. 检查 ingest 记录是否包含 source 链接，例如 `[[YYYY-MM-DD-summary-*]]`；历史旧格式 `[[summary-*]]` 可识别但应建议迁移。
 3. 检查 ingest 记录是否包含 review cues。
 4. 检查 review 页面或 Review Cues 是否以迁移式任务为主，而不是复制 source 原句。
 5. 如果最近有多次 ingest 但没有 review 页面，只提示“可生成复习”，不判为错误。
